@@ -7,32 +7,32 @@
         <item
             android:id="@+id/profile"
             android:icon="@drawable/person_clip_art"
-            android:title="Profile" />
+            android:title="@string/profile" />
         <item
             android:id="@+id/chat"
             android:icon="@drawable/chat"
-            android:title="Chat History" />
+            android:title="@string/chat_history" />
         <item
             android:id="@+id/teams"
             android:icon="@drawable/team"
-            android:title="Team" />
+            android:title="@string/team" />
         <item
             android:id="@+id/editProfile"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Edit Profile" />
+            android:title="@string/edit_profile" />
         <item
             android:id="@+id/uni"
             android:icon="@drawable/uni"
-            android:title="Add University Details" />
+            android:title="@string/add_university_details" />
 
     </group>
 
-    <item android:title="Settings">
+    <item android:title="@string/settings">
         <menu>
             <item
                 android:id="@+id/signOut"
                 android:icon="@drawable/lock_password"
-                android:title="Sign Out">
+                android:title="@string/sign_out">
             </item>
 
         </menu>

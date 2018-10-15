@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="15dp"
-            android:text="Form Better Teams"
+            android:text="@string/form_better_teams"
             android:layout_marginBottom="30sp"/>
 
     <LinearLayout
@@ -43,7 +43,7 @@
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:background="@color/colorPrimary"
-            android:text="Get Started"
+            android:text="@string/get_started"
             android:textColor="@color/white"
             android:onClick="getStartedClickHandler"/>
 
@@ -55,7 +55,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@color/colorPrimary"
-            android:text="Login"
+            android:text="@string/login"
             android:textColor="@color/white"
             android:onClick="loginHandler"/>
 

@@ -6,7 +6,26 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activities.MainPageAfterLoginActivity"
-    tools:showIn="@layout/app_bar_main_page_after_login">
+    tools:showIn="@layout/app_bar_main_page_after_login"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/newMatchFound"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:padding="5dp"
+            android:id="@+id/matchText"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark"
+            android:text="You have a new Match!" />
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
