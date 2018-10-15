@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Teammates</string>
+    <string name="title_activity_main_page_after_login">MainPageAfterLoginActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+    <!--Database Nodes-->
+    <string name="dbnode_students">students</string>
+    <string name="dbnode_coordinators">coordinators</string>
+    <string name="dbnode_universities">universities</string>
+    <string name="dbnode_majors">majors</string>
+    <string name="dbnode_subjects">subjects</string>
+    <string name="dbnode_chatrooms">chatrooms</string>
+    <string name="default_image">https://www.freewebmentor.com/default-avatar.png</string>
+
+
+    <!--Database Fields-->
+    <!--<string name="field_name">name</string>-->
+    <!--<string name="field_"></string>-->
+</resources>
+
+

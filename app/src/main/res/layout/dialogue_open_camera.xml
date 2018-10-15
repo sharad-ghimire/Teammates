@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:text="Edit Profile Image"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/openCamera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="13dp"
+            android:background="@color/colorPrimary"
+            android:text="Open Camera"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/openFromFiles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/openCamera"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="63dp"
+            android:background="@color/colorPrimary"
+            android:text="Open From Files"
+            android:textColor="@color/white"
+            android:layout_alignLeft="@+id/openCamera"
+            android:layout_marginLeft="1dp" />
+
+
+
+    </RelativeLayout>
+    
+
+</RelativeLayout>

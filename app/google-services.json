@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "703730234551",
+    "firebase_url": "https://teammates17.firebaseio.com",
+    "project_id": "teammates17",
+    "storage_bucket": "teammates17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703730234551:android:bba1166bcced15a9",
+        "android_client_info": {
+          "package_name": "com.sharad.teammates"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703730234551-m95tgngglopokq5pgrjuan42igrg7m9f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sharad.teammates",
+            "certificate_hash": "eea77c516c777ebcbf2d91223d132a1a33a6ceec"
+          }
+        },
+        {
+          "client_id": "703730234551-qrnra9ljkechmseifpsj3m75ff21t66i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkB9u7TN1b-tJxneLUBP72Rmy4lvqnN78"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703730234551-qrnra9ljkechmseifpsj3m75ff21t66i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

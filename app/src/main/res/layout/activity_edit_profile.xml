@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.EditProfileActivity"
+    android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/colorPrimary"
+                android:orientation="vertical"
+                >
+                <!--Image of the Logged in User-->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImage"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/handshake" />
+
+                <ProgressBar
+                    android:id="@+id/pBarImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <EditText
+                android:id="@+id/updateName"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/person_clip_art"
+                android:hint="Your Name"
+                />
+            <EditText
+                android:layout_marginBottom="10dp"
+                android:id="@+id/updateEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableLeft="@drawable/person_clip_art"
+                android:hint="Your Email"
+                />
+            <EditText
+                android:layout_marginBottom="10dp"
+                android:id="@+id/updateAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableLeft="@drawable/person_clip_art"
+                android:hint="Your Age"
+                />
+
+
+            <EditText
+                android:layout_marginBottom="10dp"
+                android:id="@+id/updateBio"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/person_clip_art"
+                android:hint="Your Bio"
+                />
+            <EditText
+                android:layout_marginBottom="10dp"
+                android:id="@+id/updateSkills"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/person_clip_art"
+                android:hint="Your Skills"
+                />
+            <EditText
+                android:layout_marginBottom="10dp"
+                android:id="@+id/updateInterest"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/person_clip_art"
+                android:hint="Your Interest"
+                />
+            <Button
+                android:id="@+id/updateBtn"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:text="Update"
+                android:textColor="@color/white"/>
+            <Button
+                android:id="@+id/backBtn"
+                android:layout_marginTop="20sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:text="Back"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+</LinearLayout>
