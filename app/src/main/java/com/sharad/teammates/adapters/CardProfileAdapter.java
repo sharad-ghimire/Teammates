@@ -33,6 +33,10 @@ import com.sharad.teammates.models.Subject;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * THis Adapter handles the laying out and click handler of Card displayed in Main Page
+ **/
+
 public class CardProfileAdapter extends RecyclerView.Adapter<CardProfileAdapter.ViewHolder> {
 
     private final List<Student> student;
@@ -62,9 +66,6 @@ public class CardProfileAdapter extends RecyclerView.Adapter<CardProfileAdapter.
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
         Student myStudent =  student.get(i);
-//        Glide.with(mContext).asBitmap().load(mImages.get(i)).into(viewHolder.image);
-//        viewHolder.nameTV.setText(mName.get(i));
-
         switch (myStudent.getProfile_image()){
             case "https://www.freewebmentor.com/default-avatar.png" :
                 Glide.with(mContext).asBitmap().load(mContext.getString(R.string.default_image)).into(viewHolder.image);
@@ -80,7 +81,7 @@ public class CardProfileAdapter extends RecyclerView.Adapter<CardProfileAdapter.
         viewHolder.relativeLayoutCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), ProfileActivity.class);
+                Intent intent = new Intent(v.getContext(), ViewProfileAcitivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("clickedStudentID",viewHolder.matchIDTV.getText().toString());
                 intent.putExtras(bundle);
@@ -93,42 +94,63 @@ public class CardProfileAdapter extends RecyclerView.Adapter<CardProfileAdapter.
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
+                Student addStudent = student.get(i); //if add btn is click it will add that student in addedStudent
+                addedStudent.add(addStudent);
                 if(flag){
-                    Student addStudent = student.get(i);
-                    addedStudent.add(addStudent);
                     viewHolder.addBtn.setBackgroundColor(Color.parseColor("#D3D3D3"));
                     viewHolder.addBtn.setText("Remove");
                     Toast.makeText(mContext, "Added", Toast.LENGTH_SHORT).show();
                     addStudentToAddedList(addStudent);
-                    flag = false;
+                    flag = false; //so that the same student cannot be added again
+                } else {
+                    removeThatStudentFromAdded(addStudent);
+                    viewHolder.addBtn.setBackgroundColor(Color.parseColor("#F7C44C37"));
+                    viewHolder.addBtn.setText("Add");
+                    Toast.makeText(mContext, "Removed", Toast.LENGTH_SHORT).show();
+                    flag = true;
                 }
             }
         });
 
     }
 
-
-    //Adds student to the list of added in database
-    private void addStudentToAddedList(Student addStudent) {
-        studentsDB.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+    /**
+     * Removes passed student from Added node of database
+     *
+     * @param addStudent
+     */
+    private void removeThatStudentFromAdded(Student addStudent) {
+        studentsDB.child(addStudent.getUser_id())
                 .child("Connections").child("Added")
-                .child(addStudent.getUser_id())
-                .setValue(true);
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .removeValue();
+    }
 
+
+    /** Adds student to the list of added in database
+     * @param addStudent
+     * */
+    private void addStudentToAddedList(Student addStudent) {
+        studentsDB.child(addStudent.getUser_id())
+                .child("Connections").child("Added")
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .setValue(true);
 
         isTeamMatch(addStudent.getUser_id());
     }
 
-    //Conforming a match
+    /** Confirming a match
+     * @param user_id
+     */
     private void isTeamMatch(final String user_id) {
         DatabaseReference loggedInUserAddedDB = studentsDB.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .child("Connections").child("Added").child(user_id);
+
         loggedInUserAddedDB.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
                     Toast.makeText(mContext, "Connection Made!!!!!", Toast.LENGTH_SHORT).show();
-
 
                     //This will be key for the chat
                     String key = FirebaseDatabase.getInstance().getReference().child("Chat").push().getKey();
@@ -166,6 +188,7 @@ public class CardProfileAdapter extends RecyclerView.Adapter<CardProfileAdapter.
         TextView nameTV, matchIDTV;
         RelativeLayout relativeLayoutCardView;
         Button addBtn;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.image);
